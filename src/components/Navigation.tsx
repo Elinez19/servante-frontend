@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 import { NavigationItem } from "@/types/navigation";
 import { megaMenuData } from "@/data/megaMenuData";
 import { MegaMenuDropdown } from "./MegaMenuDropdown";
@@ -14,7 +15,7 @@ const navItems: NavigationItem[] = [
   { label: "Home", href: "/", isActive: true },
   { label: "About Us", href: "/about", megaMenu: megaMenuData.about },
   { label: "Service", href: "/service", megaMenu: megaMenuData.service },
-  { label: "Workers", href: "/workers", megaMenu: megaMenuData.workers },
+  { label: "Providers", href: "/providers", megaMenu: megaMenuData.providers },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
@@ -23,7 +24,8 @@ export const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
   const [activeMegaMenu, setActiveMegaMenu] = useState<string | null>(null);
 
   const handleMouseEnter = (itemLabel: string) => {
-    if (navItems.find((item) => item.label === itemLabel)?.megaMenu) {
+    const item = navItems.find((item) => item.label === itemLabel);
+    if (item?.megaMenu?.sections && item.megaMenu.sections.length > 0) {
       setActiveMegaMenu(itemLabel);
     }
   };
@@ -39,7 +41,8 @@ export const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
   return (
     <nav className={`flex items-center space-x-8 ${className}`}>
       {navItems.map((item) => {
-        const hasMegaMenu = !!item.megaMenu;
+        const hasMegaMenu =
+          !!item.megaMenu?.sections && item.megaMenu.sections.length > 0;
         const isMegaMenuActive = activeMegaMenu === item.label;
 
         return (
@@ -59,21 +62,11 @@ export const Navigation: React.FC<NavigationProps> = ({ className = "" }) => {
             >
               {item.label}
               {hasMegaMenu && (
-                <svg
+                <ChevronDown
                   className={`w-4 h-4 transition-transform duration-200 ${
                     isMegaMenuActive ? "rotate-180" : ""
                   }`}
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
+                />
               )}
             </Link>
 

@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 import { Navigation } from "./Navigation";
 import { AuthButtons } from "./AuthButtons";
@@ -8,6 +11,15 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ className = "" }) => {
+  const pathname = usePathname();
+
+  // Hide header on authentication pages
+  const hideHeader = pathname === "/sign-in" || pathname === "/sign-up";
+
+  if (hideHeader) {
+    return null;
+  }
+
   return (
     <>
       {/* Top Border Line */}

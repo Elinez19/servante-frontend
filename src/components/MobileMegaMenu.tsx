@@ -15,7 +15,8 @@ export const MobileMegaMenu: React.FC<MobileMegaMenuProps> = ({
   isOpen,
   onClose,
 }) => {
-  if (!isOpen) return null;
+  if (!isOpen || !megaMenu.sections || megaMenu.sections.length === 0)
+    return null;
 
   return (
     <div className="md:hidden fixed inset-0 z-50 bg-white">

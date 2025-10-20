@@ -10,7 +10,7 @@ export interface MegaMenuSection {
 export interface MegaMenuData {
   title: string;
   href: string;
-  sections: MegaMenuSection[];
+  sections?: MegaMenuSection[];
   featured?: {
     title: string;
     description: string;

@@ -15,18 +15,19 @@ export const MegaMenuDropdown: React.FC<MegaMenuDropdownProps> = ({
   isOpen,
   onClose,
 }) => {
-  if (!isOpen) return null;
+  if (!isOpen || !megaMenu.sections || megaMenu.sections.length === 0)
+    return null;
 
   return (
     <>
       {/* Backdrop */}
       <div
-        className="fixed inset-0 z-40 bg-black/20 animate-in fade-in duration-200"
+        className="mega-menu-dropdown fixed inset-0 z-40 bg-black/20 animate-in fade-in duration-200"
         onClick={onClose}
       />
 
       {/* Mega Menu */}
-      <div className="fixed top-16 left-1/2 transform -translate-x-1/2 z-50 w-screen max-w-6xl bg-white shadow-2xl border-t border-gray-100 animate-in slide-in-from-top-2 duration-300">
+      <div className="mega-menu-dropdown fixed top-16 left-1/2 transform -translate-x-1/2 z-50 w-screen max-w-6xl bg-white shadow-2xl border-t border-gray-100 animate-in slide-in-from-top-2 duration-300 max-h-[calc(100vh-5rem)] overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
         <div className="px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
             {/* Main Sections */}
