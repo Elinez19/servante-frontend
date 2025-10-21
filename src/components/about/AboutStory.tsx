@@ -48,15 +48,15 @@ export const AboutStory: React.FC<AboutStoryProps> = ({ className = "" }) => {
               <p>
                 Founded with a vision to transform the service industry, Servat
                 emerged from a simple observation: finding reliable service
-                providers shouldn't be complicated or stressful.
+                providers shouldn&apos;t be complicated or stressful.
               </p>
 
               <p>
                 We started our journey by partnering with a handful of
                 exceptional cleaning professionals who shared our commitment to
-                quality and customer satisfaction. Today, we've grown into a
-                comprehensive platform connecting thousands of verified service
-                providers with customers across multiple cities.
+                quality and customer satisfaction. Today, we&apos;ve grown into
+                a comprehensive platform connecting thousands of verified
+                service providers with customers across multiple cities.
               </p>
 
               <p>

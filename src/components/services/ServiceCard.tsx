@@ -18,6 +18,7 @@ export interface ServiceCardData {
   currentPrice: string;
   originalPrice: string;
   isFavorite?: boolean;
+  features?: string[];
 }
 
 interface ServiceCardProps {
@@ -43,9 +44,6 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
     onToggleFavorite?.(service.id);
   };
 
-  const handleBookNow = () => {
-    onBookNow?.(service.id);
-  };
   const isList = layout === "list";
   const href = `/services?book=${service.id}`;
 
@@ -131,27 +129,27 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
             </h3>
 
             {/* Feature chips (list only) */}
-            {isList && (
-              <div className="mt-2 flex flex-wrap gap-2">
-                {(Array.isArray((service as any).features)
-                  ? (service as any).features.slice(0, 3)
-                  : []
-                ).map((feat: string, idx: number) => (
-                  <span
-                    key={idx}
-                    className="inline-flex items-center gap-2 rounded-md bg-blue-50 text-blue-800 border border-blue-100 px-3 py-1 text-sm"
-                  >
-                    {feat}
-                  </span>
-                ))}
-                {Array.isArray((service as any).features) &&
-                  (service as any).features.length > 3 && (
+            {isList &&
+              "features" in service &&
+              Array.isArray(service.features) && (
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {service.features
+                    .slice(0, 3)
+                    .map((feat: string, idx: number) => (
+                      <span
+                        key={idx}
+                        className="inline-flex items-center gap-2 rounded-md bg-blue-50 text-blue-800 border border-blue-100 px-3 py-1 text-sm"
+                      >
+                        {feat}
+                      </span>
+                    ))}
+                  {service.features.length > 3 && (
                     <span className="inline-flex items-center rounded-md bg-blue-50 text-blue-800 border border-blue-100 px-3 py-1 text-sm">
-                      +{(service as any).features.length - 3}
+                      +{service.features.length - 3}
                     </span>
                   )}
-              </div>
-            )}
+                </div>
+              )}
 
             {/* Pricing */}
             <div className="space-y-1">

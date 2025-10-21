@@ -35,12 +35,6 @@ export default function CategoryPage() {
     `/services/${categorySlug}`
   );
 
-  // Redirect if category not found
-  if (!category || category.slug === "all") {
-    router.push("/services");
-    return null;
-  }
-
   // Filter, sort, and paginate services for this category
   const { services: filteredServices, totalPages } = useMemo(() => {
     const filtered = filterAndSortServices(servicesData, {
@@ -54,6 +48,12 @@ export default function CategoryPage() {
 
     return paginateServices(filtered, filters.page, ITEMS_PER_PAGE);
   }, [categorySlug, filters]);
+
+  // Redirect if category not found
+  if (!category || category.slug === "all") {
+    router.push("/services");
+    return null;
+  }
 
   const handlePageChange = (page: number) => {
     updateFilters({ page }, false);

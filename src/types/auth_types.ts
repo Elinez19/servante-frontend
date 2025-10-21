@@ -37,7 +37,7 @@ export interface IRegister {
 export interface IAuthResponse {
   success: boolean;
   message: string;
-  data?: any;
+  data?: Record<string, unknown>;
 }
 
 export interface IUser {
@@ -46,5 +46,17 @@ export interface IUser {
   role: "customer" | "handyman" | "admin";
   isEmailVerified: boolean;
   is2FAEnabled: boolean;
-  profile?: any;
+  profile?: {
+    firstName?: string;
+    lastName?: string;
+    phone?: string;
+    address?: string;
+    preferredContactMethod?: "email" | "phone" | "sms";
+    skills?: string[];
+    experience?: number;
+    hourlyRate?: number;
+    availability?: string;
+    bio?: string;
+    certifications?: string[];
+  };
 }

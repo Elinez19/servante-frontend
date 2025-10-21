@@ -9,7 +9,6 @@ import {
   Briefcase,
   ArrowUpRight,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
