@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useMemo, Suspense } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { ServiceCard } from "@/components/services/ServiceCard";
@@ -25,7 +25,7 @@ import { Label } from "@/components/ui/label";
 
 const ITEMS_PER_PAGE = 12;
 
-export default function CategoryPage() {
+function CategoryContent() {
   const params = useParams();
   const router = useRouter();
   const categorySlug = params.category as string;
@@ -326,5 +326,19 @@ export default function CategoryPage() {
         </div>
       </section>
     </div>
+  );
+}
+
+export default function CategoryPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          Loading...
+        </div>
+      }
+    >
+      <CategoryContent />
+    </Suspense>
   );
 }

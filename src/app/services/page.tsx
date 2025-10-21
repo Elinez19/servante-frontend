@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, Suspense } from "react";
 import { ServiceCard } from "@/components/services/ServiceCard";
 import { ServiceFilters } from "@/components/services/ServiceFilters";
 import { ServiceSort } from "@/components/services/ServiceSort";
@@ -16,7 +16,7 @@ import { List, LayoutGrid } from "lucide-react";
 
 const ITEMS_PER_PAGE = 12;
 
-export default function ServicesPage() {
+function ServicesContent() {
   const { filters, updateFilters, resetFilters } = useServiceFilters();
   const [layout, setLayout] = useState<"grid" | "list">("grid");
 
@@ -260,5 +260,19 @@ export default function ServicesPage() {
       </section>
       <Footer />
     </>
+  );
+}
+
+export default function ServicesPage() {
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          Loading...
+        </div>
+      }
+    >
+      <ServicesContent />
+    </Suspense>
   );
 }
