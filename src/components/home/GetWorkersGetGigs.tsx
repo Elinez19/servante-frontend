@@ -2,7 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/customs/Button";
 import { ArrowUpRight } from "lucide-react";
 
 interface GetWorkersGetGigsProps {
@@ -34,23 +34,22 @@ export const GetWorkersGetGigs: React.FC<GetWorkersGetGigsProps> = ({
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button
-                  asChild
-                  className="bg-white hover:bg-gray-100 text-[#1e3a8a] font-semibold px-8 py-3 rounded-lg transition-colors duration-200 shadow-lg"
-                  size="lg"
-                >
-                  <Link href="/workers">Explore Now</Link>
-                </Button>
+                <Link href="/workers">
+                  <Button
+                    className="bg-white hover:bg-gray-100 text-[#1e3a8a] font-semibold shadow-lg"
+                    size="lg"
+                  >
+                    Explore Now
+                  </Button>
+                </Link>
 
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="w-12 h-12 bg-white hover:bg-gray-100 text-[#1e3a8a] border-none rounded-full shadow-lg"
+                <Link
+                  href="/workers"
+                  aria-label="Explore Workers"
+                  className="w-12 h-12 bg-white hover:bg-gray-100 text-[#1e3a8a] rounded-full shadow-lg flex items-center justify-center transition-colors"
                 >
-                  <Link href="/workers" aria-label="Explore Workers">
-                    <ArrowUpRight className="w-5 h-5" />
-                  </Link>
-                </Button>
+                  <ArrowUpRight className="w-5 h-5" />
+                </Link>
               </div>
             </div>
           </div>
@@ -72,23 +71,22 @@ export const GetWorkersGetGigs: React.FC<GetWorkersGetGigsProps> = ({
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <Button
-                  asChild
-                  className="bg-white hover:bg-gray-100 text-[#f97316] font-semibold px-8 py-3 rounded-lg transition-colors duration-200 shadow-lg"
-                  size="lg"
-                >
-                  <Link href="/gigs">Find Work</Link>
-                </Button>
+                <Link href="/gigs">
+                  <Button
+                    className="bg-white hover:bg-gray-100 text-[#f97316] font-semibold shadow-lg"
+                    size="lg"
+                  >
+                    Find Work
+                  </Button>
+                </Link>
 
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="w-12 h-12 bg-white hover:bg-gray-100 text-[#f97316] border-none rounded-full shadow-lg"
+                <Link
+                  href="/gigs"
+                  aria-label="Find Work"
+                  className="w-12 h-12 bg-white hover:bg-gray-100 text-[#f97316] rounded-full shadow-lg flex items-center justify-center transition-colors"
                 >
-                  <Link href="/gigs" aria-label="Find Work">
-                    <ArrowUpRight className="w-5 h-5" />
-                  </Link>
-                </Button>
+                  <ArrowUpRight className="w-5 h-5" />
+                </Link>
               </div>
             </div>
           </div>

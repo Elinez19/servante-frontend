@@ -1,13 +1,13 @@
-import { HeroSection } from "@/components/HeroSection";
-import { PopularCategories } from "@/components/PopularCategories";
-import { HowItWorks } from "@/components/HowItWorks";
-import { FeaturedServices } from "@/components/FeaturedServices";
-import { RewardsSection } from "@/components/RewardsSection";
-import { Footer } from "@/components/Footer";
-import { FixedPriceService } from "@/components/FixedPriceService";
-import { GetWorkersGetGigs } from "@/components/GetWorkersGetGigs";
-import { BlogSection } from "@/components/BlogSection";
-import { FeaturedProviders } from "@/components/FeaturedProviders";
+import { HeroSection } from "@/components/home/HeroSection";
+import { PopularCategories } from "@/components/home/PopularCategories";
+import { HowItWorks } from "@/components/home/HowItWorks";
+import { FeaturedServices } from "@/components/services/FeaturedServices";
+import { RewardsSection } from "@/components/home/RewardsSection";
+import { Footer } from "@/components/layout/Footer";
+import { FixedPriceService } from "@/components/home/FixedPriceService";
+import { GetWorkersGetGigs } from "@/components/home/GetWorkersGetGigs";
+import { BlogSection } from "@/components/home/BlogSection";
+import { FeaturedProviders } from "@/components/providers/FeaturedProviders";
 
 export default function Home() {
   return (

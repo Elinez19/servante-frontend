@@ -13,7 +13,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/customs/Button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { ProviderData } from "@/types/provider";
 
@@ -222,12 +222,14 @@ export const ProviderCard: React.FC<ProviderCardProps> = ({
                   </div>
                 )}
                 <Button
+                  variant="primary"
+                  size="md"
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
                     handleContact();
                   }}
-                  className="bg-black hover:bg-gray-800 text-white flex-1 group-hover:shadow-lg transition-all"
+                  className="flex-1 group-hover:shadow-lg"
                 >
                   <span>Contact Provider</span>
                   <ArrowUpRight className="w-4 h-4 ml-2" />

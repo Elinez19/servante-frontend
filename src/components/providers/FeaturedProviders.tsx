@@ -2,8 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { ProviderCard } from "@/components/ProviderCard";
-import { Button } from "@/components/ui/button";
+import { ProviderCard } from "@/components/providers/ProviderCard";
+import Button from "@/components/customs/Button";
 import { ArrowRight, Users } from "lucide-react";
 import { providersData } from "@/data/providersData";
 
@@ -69,10 +69,7 @@ export const FeaturedProviders: React.FC = () => {
         {/* CTA Button */}
         <div className="text-center">
           <Link href="/providers">
-            <Button
-              size="lg"
-              className="bg-black hover:bg-gray-800 text-white text-lg px-8 py-6"
-            >
+            <Button variant="primary" size="lg" className="text-lg">
               View All Providers
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>

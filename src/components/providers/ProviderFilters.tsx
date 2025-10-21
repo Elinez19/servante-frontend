@@ -3,7 +3,7 @@
 import React from "react";
 import { Search, X, Star, CheckCircle2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/customs/Button";
 import { Badge } from "@/components/ui/badge";
 import {
   Select,
@@ -231,7 +231,8 @@ export const ProviderFilters: React.FC<ProviderFiltersProps> = ({
       <Button
         onClick={onResetAll}
         variant="outline"
-        className="w-full border-gray-300 hover:bg-gray-50"
+        size="md"
+        className="w-full"
       >
         <X className="w-4 h-4 mr-2" />
         Reset All Filters

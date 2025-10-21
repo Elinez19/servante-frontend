@@ -2,9 +2,10 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { Logo } from "./Logo";
 import { Navigation } from "./Navigation";
-import { AuthButtons } from "./AuthButtons";
+import Button from "@/components/customs/Button";
 
 interface HeaderProps {
   className?: string;
@@ -14,7 +15,8 @@ export const Header: React.FC<HeaderProps> = ({ className = "" }) => {
   const pathname = usePathname();
 
   // Hide header on authentication pages
-  const hideHeader = pathname === "/sign-in" || pathname === "/sign-up";
+  const hideHeader =
+    pathname === "/auth/login" || pathname === "/auth/register";
 
   if (hideHeader) {
     return null;
@@ -42,8 +44,17 @@ export const Header: React.FC<HeaderProps> = ({ className = "" }) => {
             </div>
 
             {/* Auth Buttons Section */}
-            <div className="flex-shrink-0">
-              <AuthButtons />
+            <div className="flex-shrink-0 flex items-center gap-3">
+              <Link href="/login">
+                <Button variant="ghost" size="sm">
+                  Login
+                </Button>
+              </Link>
+              <Link href="/register">
+                <Button variant="primary" size="sm">
+                  Sign Up
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

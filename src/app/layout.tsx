@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/Header";
+import { Header } from "@/components/layout/Header";
 import { Toaster } from "@/components/ui/sonner";
-import { MainContent } from "@/components/MainContent";
+import { MainContent } from "@/components/layout/MainContent";
+import { ReduxProvider } from "@/providers/redux-provider";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -24,9 +25,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${poppins.variable} antialiased`}>
-        <Header />
-        <MainContent>{children}</MainContent>
-        <Toaster />
+        <ReduxProvider>
+          <Header />
+          <MainContent>{children}</MainContent>
+          <Toaster />
+        </ReduxProvider>
       </body>
     </html>
   );

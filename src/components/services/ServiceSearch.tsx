@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { Search, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/customs/Button";
 
 interface ServiceSearchProps {
   value: string;
@@ -54,9 +54,9 @@ export const ServiceSearch: React.FC<ServiceSearchProps> = ({
           <Button
             type="button"
             variant="ghost"
-            size="icon-sm"
+            size="sm"
             onClick={handleClear}
-            className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 hover:bg-transparent"
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 hover:bg-transparent w-8 h-8 p-0"
             aria-label="Clear search"
           >
             <X className="w-5 h-5" />

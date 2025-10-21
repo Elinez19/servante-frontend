@@ -5,7 +5,7 @@ import { CategoryInfo } from "@/types/service";
 import { Filter } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/customs/Button";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
@@ -178,6 +178,7 @@ export const ServiceFilters: React.FC<ServiceFiltersProps> = ({
         {hasActiveFilters && (
           <Button
             variant="outline"
+            size="md"
             onClick={() => {
               onResetAll?.();
               if (!onResetAll) {
@@ -186,7 +187,7 @@ export const ServiceFilters: React.FC<ServiceFiltersProps> = ({
                 onPriceRangeChange({ min: 0, max: 1000 });
               }
             }}
-            className="w-full border-blue-600 text-blue-700 hover:bg-orange-50 hover:text-blue-800 hover:border-blue-700"
+            className="w-full"
           >
             Reset All Filters
           </Button>

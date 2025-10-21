@@ -3,10 +3,10 @@
 import React, { useMemo } from "react";
 import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import { ServiceCard } from "@/components/ServiceCard";
-import { ServiceSearch } from "@/components/ServiceSearch";
-import { ServiceSort } from "@/components/ServiceSort";
-import { Pagination } from "@/components/Pagination";
+import { ServiceCard } from "@/components/services/ServiceCard";
+import { ServiceSearch } from "@/components/services/ServiceSearch";
+import { ServiceSort } from "@/components/services/ServiceSort";
+import { Pagination } from "@/components/common/Pagination";
 import { getCategoryBySlug, servicesData } from "@/data/servicesData";
 import { useServiceFilters } from "@/hooks/useServiceFilters";
 import { filterAndSortServices, paginateServices } from "@/lib/filterServices";
@@ -20,7 +20,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/customs/Button";
 import { Label } from "@/components/ui/label";
 
 const ITEMS_PER_PAGE = 12;

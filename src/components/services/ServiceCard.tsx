@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/customs/Button";
 
 export interface ServiceCardData {
   id: string;
@@ -81,13 +81,13 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
           {/* Heart Icon */}
           <Button
             variant="ghost"
-            size="icon"
+            size="sm"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
               handleToggleFavorite();
             }}
-            className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white"
+            className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full hover:bg-white w-8 h-8 p-0"
           >
             <Heart
               className={`w-4 h-4 transition-colors duration-200 ${

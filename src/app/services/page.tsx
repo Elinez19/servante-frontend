@@ -1,16 +1,16 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { ServiceCard } from "@/components/ServiceCard";
-import { ServiceFilters } from "@/components/ServiceFilters";
-import { ServiceSort } from "@/components/ServiceSort";
-import { Pagination } from "@/components/Pagination";
+import { ServiceCard } from "@/components/services/ServiceCard";
+import { ServiceFilters } from "@/components/services/ServiceFilters";
+import { ServiceSort } from "@/components/services/ServiceSort";
+import { Pagination } from "@/components/common/Pagination";
 import { servicesData, categories } from "@/data/servicesData";
 import { useServiceFilters } from "@/hooks/useServiceFilters";
 import { filterAndSortServices, paginateServices } from "@/lib/filterServices";
 import { Search } from "lucide-react";
-import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import { Footer } from "@/components/layout/Footer";
+import Button from "@/components/customs/Button";
 import { Card, CardContent } from "@/components/ui/card";
 import { List, LayoutGrid } from "lucide-react";
 
@@ -150,26 +150,20 @@ export default function ServicesPage() {
                       }
                     />
                   </div>
-                  <div className="inline-flex rounded-md border border-blue-200 overflow-hidden">
+                  <div className="inline-flex rounded-md border border-gray-200 overflow-hidden">
                     <Button
-                      variant={layout === "grid" ? "default" : "ghost"}
-                      className={
-                        layout === "grid"
-                          ? "bg-blue-600 text-white hover:bg-blue-700"
-                          : "text-blue-700 hover:bg-orange-50"
-                      }
+                      variant={layout === "grid" ? "primary" : "ghost"}
+                      size="sm"
+                      className={layout === "grid" ? "" : "text-gray-700"}
                       onClick={() => setLayout("grid")}
                       aria-label="Grid view"
                     >
                       <LayoutGrid className="w-4 h-4" />
                     </Button>
                     <Button
-                      variant={layout === "list" ? "default" : "ghost"}
-                      className={
-                        layout === "list"
-                          ? "bg-blue-600 text-white hover:bg-blue-700"
-                          : "text-blue-700 hover:bg-orange-50"
-                      }
+                      variant={layout === "list" ? "primary" : "ghost"}
+                      size="sm"
+                      className={layout === "list" ? "" : "text-gray-700"}
                       onClick={() => setLayout("list")}
                       aria-label="List view"
                     >

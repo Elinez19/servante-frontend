@@ -3,8 +3,8 @@
 import React from "react";
 import { useParams, useRouter } from "next/navigation";
 import { providersData } from "@/data/providersData";
-import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import { Footer } from "@/components/layout/Footer";
+import Button from "@/components/customs/Button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";

@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { ProviderCard } from "@/components/ProviderCard";
-import { ProviderFilters } from "@/components/ProviderFilters";
-import { ProviderSort } from "@/components/ProviderSort";
-import { Pagination } from "@/components/Pagination";
+import { ProviderCard } from "@/components/providers/ProviderCard";
+import { ProviderFilters } from "@/components/providers/ProviderFilters";
+import { ProviderSort } from "@/components/providers/ProviderSort";
+import { Pagination } from "@/components/common/Pagination";
 import { providersData, providerCategories } from "@/data/providersData";
 import { useProviderFilters } from "@/hooks/useProviderFilters";
 import {
@@ -12,8 +12,8 @@ import {
   paginateProviders,
 } from "@/lib/filterProviders";
 import { Search, Users, List, LayoutGrid } from "lucide-react";
-import { Footer } from "@/components/Footer";
-import { Button } from "@/components/ui/button";
+import { Footer } from "@/components/layout/Footer";
+import Button from "@/components/customs/Button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const ITEMS_PER_PAGE = 9;
@@ -199,26 +199,18 @@ export default function ProvidersPage() {
                   </div>
                   <div className="inline-flex rounded-md border border-gray-200 overflow-hidden">
                     <Button
-                      variant={layout === "grid" ? "default" : "ghost"}
-                      size="icon"
-                      className={
-                        layout === "grid"
-                          ? "bg-black text-white hover:bg-gray-800"
-                          : "text-gray-700 hover:bg-gray-50"
-                      }
+                      variant={layout === "grid" ? "primary" : "ghost"}
+                      size="sm"
+                      className={layout === "grid" ? "" : "text-gray-700"}
                       onClick={() => setLayout("grid")}
                       aria-label="Grid view"
                     >
                       <LayoutGrid className="w-4 h-4" />
                     </Button>
                     <Button
-                      variant={layout === "list" ? "default" : "ghost"}
-                      size="icon"
-                      className={
-                        layout === "list"
-                          ? "bg-black text-white hover:bg-gray-800"
-                          : "text-gray-700 hover:bg-gray-50"
-                      }
+                      variant={layout === "list" ? "primary" : "ghost"}
+                      size="sm"
+                      className={layout === "list" ? "" : "text-gray-700"}
                       onClick={() => setLayout("list")}
                       aria-label="List view"
                     >

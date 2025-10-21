@@ -10,7 +10,8 @@ export function MainContent({ children }: MainContentProps) {
   const pathname = usePathname();
 
   // Auth pages don't need top padding since they don't have the header
-  const needsTopPadding = pathname !== "/sign-in" && pathname !== "/sign-up";
+  const needsTopPadding =
+    pathname !== "/auth/login" && pathname !== "/auth/register";
 
   return <main className={needsTopPadding ? "pt-16" : ""}>{children}</main>;
 }

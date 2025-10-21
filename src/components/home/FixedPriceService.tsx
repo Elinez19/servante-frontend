@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import Button from "@/components/customs/Button";
 import {
   DollarSign,
   CalendarDays,
@@ -94,23 +94,22 @@ export const FixedPriceService: React.FC<FixedPriceServiceProps> = ({
 
               {/* Call to Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  asChild
-                  className="bg-[#FFD140] hover:bg-[#FFD140]/90 text-[#1A234B] font-semibold px-8 py-3 rounded-lg transition-colors duration-200"
-                  size="lg"
-                >
-                  <Link href="/contact">Contact Now</Link>
-                </Button>
+                <Link href="/contact">
+                  <Button
+                    className="bg-[#FFD140] hover:bg-[#FFD140]/90 text-[#1A234B] font-semibold"
+                    size="lg"
+                  >
+                    Contact Now
+                  </Button>
+                </Link>
 
-                <Button
-                  variant="outline"
-                  size="icon"
-                  className="w-12 h-12 bg-[#FFD140] hover:bg-[#FFD140]/90 text-[#1A234B] border-none rounded-full"
+                <Link
+                  href="/contact"
+                  aria-label="Contact Now"
+                  className="w-12 h-12 bg-[#FFD140] hover:bg-[#FFD140]/90 text-[#1A234B] rounded-full flex items-center justify-center transition-colors"
                 >
-                  <Link href="/contact" aria-label="Contact Now">
-                    <ArrowUpRight className="w-5 h-5" />
-                  </Link>
-                </Button>
+                  <ArrowUpRight className="w-5 h-5" />
+                </Link>
               </div>
             </div>
           </div>
