@@ -20,7 +20,7 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Button from "@/components/customs/Button";
+import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 
 const ITEMS_PER_PAGE = 12;
