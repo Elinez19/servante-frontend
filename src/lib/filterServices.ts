@@ -36,7 +36,7 @@ export function filterAndSortServices(
   // Rating filter
   if (options.minRating && options.minRating > 0) {
     filtered = filtered.filter(
-      (service) => service.rating >= options.minRating
+      (service) => service.rating >= options.minRating!
     );
   }
 

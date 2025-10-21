@@ -31,7 +31,6 @@ interface ServiceCardProps {
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
   service,
-  onBookNow,
   onToggleFavorite,
   className = "",
   layout = "grid",
