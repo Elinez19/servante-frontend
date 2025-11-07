@@ -101,9 +101,9 @@ export const Logout = async () => {
 
   // Clear local storage
   if (typeof window !== "undefined") {
-    localStorage.removeItem("EimpactAccessToken");
-    localStorage.removeItem("EimpactRefreshToken");
-    localStorage.removeItem("EimpactProfile");
+    localStorage.removeItem("ServanteAccessToken");
+    localStorage.removeItem("ServanteRefreshToken");
+    localStorage.removeItem("ServanteProfile");
 
     // Redirect to login
     window.location.href = "/auth/login";
@@ -113,7 +113,7 @@ export const Logout = async () => {
 // Helper function to check if user is authenticated
 export const isAuthenticated = (): boolean => {
   if (typeof window !== "undefined") {
-    const accessToken = localStorage.getItem("EimpactAccessToken");
+    const accessToken = localStorage.getItem("ServanteAccessToken");
     return !!accessToken;
   }
   return false;
@@ -122,8 +122,8 @@ export const isAuthenticated = (): boolean => {
 // Helper function to get tokens from storage
 export const getTokens = () => {
   if (typeof window !== "undefined") {
-    const accessToken = localStorage.getItem("EimpactAccessToken");
-    const refreshToken = localStorage.getItem("EimpactRefreshToken");
+    const accessToken = localStorage.getItem("ServanteAccessToken");
+    const refreshToken = localStorage.getItem("ServanteRefreshToken");
     return {
       accessToken,
       refreshToken,
@@ -138,9 +138,9 @@ export const getTokens = () => {
 // Helper function to clear all auth data
 export const clearAuthData = () => {
   if (typeof window !== "undefined") {
-    localStorage.removeItem("EimpactAccessToken");
-    localStorage.removeItem("EimpactRefreshToken");
-    localStorage.removeItem("EimpactProfile");
+    localStorage.removeItem("ServanteAccessToken");
+    localStorage.removeItem("ServanteRefreshToken");
+    localStorage.removeItem("ServanteProfile");
   }
 };
 
